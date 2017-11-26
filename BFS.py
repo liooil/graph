@@ -14,5 +14,5 @@ def BFS(G, s, INF=99999):
             if dists[u]==INF:
                 dists[u] = dists[v]+1
                 prevs[u] = v
-                Q.append[u]
+                Q.append(u)
                 print('%s is visited'%u)

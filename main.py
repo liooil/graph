@@ -17,7 +17,7 @@ def graph_1():
 
     g.AddEdge('c','e',6)
     g.AddEdge('c','t',10)
-        
+
     g.AddEdge('d','b',2)
     g.AddEdge('d','c',8)
     g.AddEdge('d','e',4)
@@ -27,4 +27,4 @@ def graph_1():
     return g
 
 myGraph = graph_1()
-BFS.BFS(myGraph,'a')
+BFS.BFS(myGraph,'s')

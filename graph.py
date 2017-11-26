@@ -1,6 +1,6 @@
 import fib_heap
 class graph:
-    def __init__(self,n):
+    def __init__(self):
         self.g = dict()
     def AddEdge(self,u,v,weight):
         self.g[u][v] = weight

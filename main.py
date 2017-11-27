@@ -1,30 +1,11 @@
-import graph, BFS
+import graph, Dijkstra, BFS
 
 def graph_1():
-    g=graph.graph()
+    g = {'s':{'b':10,'d':10},'b':{'c':9},'c':{'e':6,'t':10},'d':{'b':2,'c':8,'e':4},'e':{'t':10},'t':dict()}
+    G = graph.graph(g)
+    return G
 
-    g.AddVertex('s')
-    g.AddVertex('b')
-    g.AddVertex('c')
-    g.AddVertex('d')
-    g.AddVertex('e')
-    g.AddVertex('t')
-
-    g.AddEdge('s','b',10)
-    g.AddEdge('s','d',10)
-
-    g.AddEdge('b','c',9)
-
-    g.AddEdge('c','e',6)
-    g.AddEdge('c','t',10)
-
-    g.AddEdge('d','b',2)
-    g.AddEdge('d','c',8)
-    g.AddEdge('d','e',4)
-
-    g.AddEdge('e','t',10)
-
-    return g
-
-myGraph = graph_1()
-BFS.BFS(myGraph,'s')
+G = graph_1()
+Dijkstra.Dijkstra(G,'s','t')
+for i in BFS.BFS(G,'s'):
+    print(i)

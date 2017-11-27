@@ -1,18 +1,21 @@
 import graph
-def BFS(G, s, INF=99999):
-    dists = dict()
-    prevs = dict()
+def BFT(G, s, INF=99999):
     for v in G.g:
-        dists[v] = INF
-        prevs[v] = None
+        G.dists[v] = INF
+        G.prevs[v] = None
     Q = []
-    dists[s] = 0
+    G.dists[s] = 0
     Q.append(s)
     while len(Q)!=0:
         v = Q.pop(0)
         for u in G.g[v]:
-            if dists[u]==INF:
-                dists[u] = dists[v]+1
-                prevs[u] = v
+            if G.dists[u]==INF:
+                G.dists[u] = G.dists[v]+1
+                G.prevs[u] = v
                 Q.append(u)
                 yield u
+def BFS(G, s, t):
+    for u in BFT(G, s):
+        if u==t:
+            return True
+    return False

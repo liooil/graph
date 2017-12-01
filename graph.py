@@ -29,3 +29,10 @@ class graph:
         return self.dists[node]
     def SetVertexdists(self,node_name,dists):
         self.dists[node] = dists
+    def printGraph(self):
+        for u in self.g:
+            print(u+':')
+            if self.g[u]==dict():
+                print("\tEmpty")
+            for v in self.g[u]:
+                print('\t',u,'->',v,':',self.g[u][v])
